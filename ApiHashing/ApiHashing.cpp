@@ -67,7 +67,7 @@ FARPROC GetProcAddressH (HMODULE hModule, DWORD64 Hash) {
 		pFunctionName = (PBYTE)(FunctionNameAddressArray[i] + (ULONG_PTR)hModule);
 		if (Hash == HASHA(pFunctionName)) {
 			ReturnAddress = (FARPROC)((ULONG_PTR)hModule + FunctionAddressArray[FunctionOrdinalAddressArray[i]]);
-			// the following part is from https://github.com/Cracked5pider/KaynLdr/blob/main/KaynLdr/src/Win32.c#L48 (thanks for @C5pider :p)
+			// the following part is from https://github.com/Cracked5pider/KaynLdr/blob/main/KaynLdr/src/Win32.c#L48 thanks for @C5pider 
 			if ((ULONG_PTR)ReturnAddress >= (ULONG_PTR)ExportTable && 
 				(ULONG_PTR)ReturnAddress < (ULONG_PTR)(ExportTable + (ULONG_PTR)hModule + NtHdr->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].Size)) {
 				
