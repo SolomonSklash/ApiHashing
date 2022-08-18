@@ -19,7 +19,7 @@ UINT32 CopyDotStr(PCHAR String);
 
 PVOID RfCopyMemory(PVOID Destination, CONST PVOID Source, SIZE_T Length);
 
-
+// from https://github.com/rad9800/WTSRM/blob/master/WTSRM/entry.cpp#L152 thanks to @rad98
 constexpr int RandomSeed(void)
 {
 	return '0' * -40271 + // offset accounting for digits' ANSI offsets
